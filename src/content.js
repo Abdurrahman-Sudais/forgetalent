@@ -9,6 +9,8 @@ const site = {
   email: 'michael@forgetalent.top',
   team: [
     {name: 'Michael Adeyemi', role: 'Founder', initials: 'MA', bio: 'Michael founded ForgeTalent after watching strong candidates fall through keyword filters while recruiters drowned in CVs. Michael leads product, customers and every pilot, with a focus on skills-based, fair hiring.', focus: ['Product', 'Skills-based hiring', 'Customer pilots']},
+    {name: "Kemi Oladipo", role: "Co-founder", initials: "KO", bio: "Kemi leads customer success at ForgeTalent: onboarding recruitment agencies and HR teams, shaping structured, skills-based hiring workflows and turning recruiter feedback into product changes.", focus: ["Talent acquisition", "Pilot onboarding", "Fair hiring practice"]},
+    {name: "Chinedu Okafor", role: "CTO", initials: "CO", bio: "Chinedu leads engineering: CV parsing, evidence-linked skills extraction, matching, interview guides, workforce forecasting and the AWS platform it runs on.", focus: ["Platform architecture", "Skills extraction", "AWS infrastructure"]},
   ],
   app: {
     title: 'Skills board',

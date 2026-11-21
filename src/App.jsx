@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import site from './content.js';
+import {Count, Cycle, Marquee, Stats, Words} from './Flow.jsx';
 import {JOB, candidates, workforce} from './data.js';
 import {score, workforceForecast} from './engine.js';
 import {ACROSS, SERVICES, STAGES, WHY} from './aws.js';
@@ -37,14 +38,19 @@ function Header() {
   );
 }
 
+const CYCLE = ["recruitment agencies", "corporate HR teams", "technology companies"];
+const MQ = ["Recruitment agencies", "Corporate HR", "Technology companies", "CV analysis", "Skills evidence", "Blind review", "Interview guides", "Pipeline", "Job descriptions", "Workforce planning", "Talent acquisition", "HR directors"];
+const STATS = [[6, "fictional CVs on the skills board"], [6, "weighted requirements"], [6, "pipeline stages, every move with a reason"], [0, "demographic fields used to rank"]];
+
 function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="heat" aria-hidden="true" />
       <div className="hero-copy">
         <p className="tag" data-r>Skills intelligence for recruiters and HR teams</p>
-        <h1 id="hero-title" data-r>Build stronger teams through <span className="molten">skills intelligence.</span></h1>
+        <h1 id="hero-title"><Words>Build stronger teams through <span className="molten">skills intelligence.</span></Words></h1>
         <p className="lede" data-r>{site.about}</p>
+        <p className="fcy" data-r style={{'--d': '200ms'}}><Cycle lead="Built for" items={CYCLE} /></p>
         <div className="ctas" data-r><a className="btn" href="#demo" data-magnetic data-cursor="Demo">Request a demo</a><a className="btn ghost" href="/app" data-cursor="Try">Open the skills board</a></div>
       </div>
       <div className="anvil" data-r aria-label="Skills from CVs forged into a job requirement">
@@ -170,8 +176,7 @@ function Technology() {
 }
 
 function Team() {
-  const p = site.team[0];
-  return <section className="sec" id="team" aria-labelledby="team-title"><div className="team" data-r><span className="av" aria-hidden="true">{p.initials}</span><div><p className="tag">Founder</p><h2 id="team-title">{p.name}</h2><p>{p.bio}</p><ul className="tags">{p.focus.map((f) => <li key={f}>{f}</li>)}</ul></div></div></section>;
+  return <section className="sec" id="team" aria-labelledby="team-title"><div className="team-head"><p className="tag">Founding team</p><h2 id="team-title">The people building {site.name}.</h2></div><div className="team-list">{site.team.map((p, i) => (<div key={p.name} style={{'--d': `${i * 90}ms`}} className="team" data-r><span className="av" aria-hidden="true">{p.initials}</span><div><p className="tag">{p.role}</p><h3 className="tname">{p.name}</h3><p>{p.bio}</p><ul className="tags">{p.focus.map((f) => <li key={f}>{f}</li>)}</ul></div></div>))}</div></section>;
 }
 
 function Demo() {
@@ -207,7 +212,7 @@ function Footer() {
   );
 }
 
-function Home() { return (<><Hero /><Evidence /><Features /><Fairness /><Workforce /><Who /><Pricing /><Technology /><Team /><Demo /><Faq /><Contact /></>); }
+function Home() { return (<><Hero /><Marquee items={MQ} label="Who and what it is built for" /><Stats items={STATS} /><Evidence /><Features /><Fairness /><Workforce /><Who /><Pricing /><Technology /><Team /><Demo /><Faq /><Contact /></>); }
 
 const LEGAL = {
   privacy: ['Privacy notice', [['This website', 'ForgeTalent is a proposed product. This website and the skills board run in your browser on fictional CVs.'], ['Skills board', 'Your changes are kept in your browser’s local storage (key forgetalent-board-v1) and never leave your device.'], ['Forms', `Until a form service is connected, the demo and contact forms open a pre-filled email to ${site.email}; nothing is sent until you send it. Please do not send CVs through the forms.`], ['Cookies & analytics', 'None.']]],

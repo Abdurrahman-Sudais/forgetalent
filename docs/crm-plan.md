@@ -49,4 +49,4 @@ The hidden `website` field on both forms is a honeypot: if it is filled, nothing
 - **Pilots:** Demo request → Qualified (agency or HR team with active roles) → Demo → Pilot scoped (a few roles) → Pilot live → Customer.
 - **Contact:** route by `contact_topic`; technical and security questions get a written answer before any call.
 
-Owner: Michael Adeyemi, Founder. Reply target: two working days.
+Owner: Michael Adeyemi, Founder (pilots: Kemi Oladipo, Co-founder; technical and security questions: Chinedu Okafor, CTO). Reply target: two working days.

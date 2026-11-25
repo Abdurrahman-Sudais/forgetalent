@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Briefcase, Building2, Check, Cpu} from 'lucide-react';
 import site from './content.js';
 import {Count, Cycle, Marquee, Stats, Words} from './Flow.jsx';
 import {JOB, candidates, workforce} from './data.js';
@@ -130,12 +131,25 @@ function Workforce() {
   );
 }
 
+const WHO = [
+  {icon: Briefcase, title: 'Recruitment agencies', lead: 'Many clients and roles — consistent, evidence-backed shortlists.', gets: ['Shortlists with the CV sentence behind every skill', 'One scoring method across every client', 'Interview guides ready for each candidate']},
+  {icon: Building2, title: 'Corporate HR departments', lead: 'Fair, documented processes and workforce plans leadership can trust.', gets: ['Blind review on by default', 'A recorded reason for every pipeline move', 'Workforce forecasts by role family']},
+  {icon: Cpu, title: 'Technology companies', lead: 'Skills over pedigree for fast-moving technical roles.', gets: ['Weighted must-haves instead of keyword filters', 'Gaps probed in interview, never auto-rejected', 'Job descriptions written from real requirements']},
+];
+
 function Who() {
   return (
     <section className="sec" aria-labelledby="who-title">
       <p className="tag">Target customers</p>
       <h2 id="who-title">For the people who build teams.</h2>
-      <div className="who">{[['Recruitment agencies', 'Many clients and roles — consistent, evidence-backed shortlists.'], ['Corporate HR departments', 'Fair, documented processes and workforce plans leadership can trust.'], ['Technology companies', 'Skills over pedigree for fast-moving technical roles.']].map(([t, d]) => <article key={t} data-r data-tilt data-spot><h3>{t}</h3><p>{d}</p></article>)}</div>
+      <div className="who">{WHO.map(({icon: Icon, title, lead, gets}, i) => (
+        <article key={title} data-r data-tilt data-spot>
+          <div className="who-top"><span className="who-ic"><Icon aria-hidden="true" size={22} strokeWidth={1.75} /></span><span className="who-n">0{i + 1}</span></div>
+          <h3>{title}</h3>
+          <p>{lead}</p>
+          <ul>{gets.map((g) => <li key={g}><Check aria-hidden="true" size={15} strokeWidth={2.25} />{g}</li>)}</ul>
+        </article>
+      ))}</div>
       <p className="decision">Decision-makers — HR directors · recruitment managers · talent acquisition specialists</p>
     </section>
   );

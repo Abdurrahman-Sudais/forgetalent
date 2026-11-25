@@ -4,7 +4,7 @@
 
 ForgeTalent is a proposed recruitment and workforce intelligence platform for recruitment agencies, corporate HR departments and technology companies. Its evidence-based skills system connects job requirements with documented candidate qualifications, organises recruitment workflows and identifies workforce development needs. Human recruiters review candidate information and make every hiring decision.
 
-> ForgeTalent is a proposed product. Features, integrations and AWS services are planned until implemented and verified. Pricing is illustrative, and the prototype uses fictional data. Founder: **Michael Adeyemi**. Website: `forgetalent.top` · contact: `michael@forgetalent.top`.
+> ForgeTalent is a proposed product. Features, integrations and AWS services are planned until implemented and verified. Pricing is illustrative, and the prototype uses fictional data. Founder: **Michael Adeyemi**; co-founder **Kemi Oladipo**; CTO **Chinedu Okafor**. Website: `forgetalent.top` · contact: `michael@forgetalent.top`.
 
 ## Design
 
@@ -18,7 +18,8 @@ The look is the forge: charcoal with film grain, molten orange-to-gold gradients
 - **Who it's for:** target customers and decision-makers.
 - **Pricing:** a recruiter-seat stepper with volume tiers.
 - **Technology:** the planned AWS architecture (Bedrock, Textract, SageMaker AI, S3, DynamoDB, Lambda), with each service's role.
-- **Closing sections:** founder, progress and the demo-request form, FAQ, contact form with a topic picker, and a molten wordmark footer.
+- **Who it’s for:** three customer cards, each with the concrete things that team gets.
+- **Closing sections:** founding team, progress and the demo-request form, FAQ, contact form with a topic picker, and a molten wordmark footer.
 - **Interactions:** an ember cursor that sends sparks flying on every click, magnetic buttons, a glowing scroll-progress bar and view-transition tabs in the prototype.
 
 ## Prototype (`/app`)

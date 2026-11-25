@@ -109,10 +109,16 @@ h3 { font-size: 18px; font-weight: 600; line-height: 1.3; }
 .wf b { font: 700 22px var(--head); text-align: right; }
 
 .who { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 40px; }
-.who article { position: relative; overflow: hidden; isolation: isolate; background: var(--bg2); border: 1px solid var(--line); border-radius: 6px; padding: 30px; min-height: 230px; display: flex; flex-direction: column; justify-content: flex-end; transition: transform .5s var(--ease); }
+.who article { position: relative; overflow: hidden; isolation: isolate; background: var(--bg2); border: 1px solid var(--line); border-radius: 6px; padding: 30px; display: flex; flex-direction: column; transition: transform .5s var(--ease); }
 .who article::before, .seat::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 110, 40, .18), transparent 60%); opacity: 0; transition: opacity .3s; }
 .who article:hover::before, .seat:hover::before { opacity: 1; }
 .who h3 { font: 700 24px var(--head); } .who p { color: var(--muted); margin-top: 10px; }
+.who-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 34px; }
+.who-ic { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 6px; color: #160b04; background: var(--molten); box-shadow: 0 10px 30px -12px rgba(255, 110, 40, .7); }
+.who-n { font: 12px var(--mono); color: var(--muted); letter-spacing: .12em; }
+.who ul { list-style: none; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.who li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--text); }
+.who li svg { flex: none; margin-top: 3px; color: var(--gold); }
 .decision { margin-top: 22px; color: var(--muted); font: 400 13px var(--mono); }
 
 .seat { position: relative; overflow: hidden; isolation: isolate; background: var(--bg2); border: 1px solid var(--line2); border-radius: 6px; padding: 30px; display: grid; gap: 16px; }
